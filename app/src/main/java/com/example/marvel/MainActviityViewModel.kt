@@ -21,7 +21,7 @@ class MainActviityViewModel @Inject constructor(
 
     init {
         viewModelScope.launch {
-            when (val result = repository.getComic(114)) {
+            when (val result = repository.getComic(100)) {
                 is Result.Error -> {
                     // TODO()
                 }

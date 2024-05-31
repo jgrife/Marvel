@@ -37,6 +37,9 @@ data class ComicDTO(
 fun ComicDTO.toComic(): Comic {
     return Comic(
         id = id,
-        title = title
+        title = title,
+        description = textObjects.getOrNull(0)?.text ?: "",
+        // TODO this would be thought out more on how exactly to determine the size/ratio of image to use
+        thumbnailPortrait = "${thumbnail.path}/portrait_xlarge.${thumbnail.extension}"
     )
 }

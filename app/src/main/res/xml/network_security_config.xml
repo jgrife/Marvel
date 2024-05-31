@@ -5,4 +5,9 @@
             <certificates src="user"/>
         </trust-anchors>
     </debug-overrides>
+   <!-- Marvel API returns image url's with http vs. https. It looks like the CDN redirects to https connection,
+        but this causes an issue for Android. Resolving that below, just for the Image CDN, below   -->
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">annihil.us</domain>
+    </domain-config>
 </network-security-config>
